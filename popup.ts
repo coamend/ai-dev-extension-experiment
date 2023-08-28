@@ -9,8 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     loginButton.addEventListener('click', () => {
-        chrome.identity.getAuthToken({ 'interactive': true }, function(token) {
-            if (chrome.runtime.lastError) {
+        chrome.identity.getAuthToken({ 'interactive': true }, (token) => {
+  if (chrome.runtime.lastError) {
                 showError('Error getting auth token');
                 return;
             }
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .catch(error => {
                 showError('Error fetching user data: ' + error);
             });
-        });
+});
     });
 });
 
